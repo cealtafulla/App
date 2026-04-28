@@ -74,13 +74,16 @@
   </style>
 
   <script>
-    function entrar() {
-      document.getElementById("loader").style.display = "block";
-      setTimeout(function() {
-        window.location.href = "https://sites.google.com/view/cealtafullaentradaprincipal/p%C3%A0gina-principal";
-      }, 600);
-    }
-  </script>
+  function entrar() {
+    document.getElementById("loader").style.display = "block";
+    setTimeout(function() {
+      window.open(
+        "https://sites.google.com/view/cealtafullaentradaprincipal/p%C3%A0gina-principal",
+        "_blank"
+      );
+    }, 600);
+  }
+</script>
 
 </head>
 <body>
