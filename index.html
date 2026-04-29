@@ -67,17 +67,18 @@
 
   <!-- Script: Obrir navegador per defecte -->
   <script>
-    function entrar() {
-      document.getElementById("loader").style.display = "block";
+  function entrar() {
+    document.getElementById("loader").style.display = "block";
 
-      setTimeout(function() {
-        window.open(
-          "https://sites.google.com/view/cealtafullaentradaprincipal/p%C3%A0gina-principal",
-          "_blank"
-        );
-      }, 600);
-    }
-  </script>
+    setTimeout(function() {
+      window.open(
+        "https://sites.google.com/view/cealtafullaentradaprincipal/p%C3%A0gina-principal",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }, 600);
+  }
+</script>
 
   <!-- Registrar Service Worker -->
   <script>
