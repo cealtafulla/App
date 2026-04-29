@@ -89,5 +89,41 @@
     }
   </script>
 
+  <script>
+  const ANALYTICS_URL = "https://script.google.com/macros/s/AKfycbxSKKV-cZ7id9SNjXK_p3c0F9LbWb2V2ILqTFenaJdfoOrLaf_O3GROZpLkPJjOZd9aaA/exec";
+
+  function track(eventName) {
+    fetch(ANALYTICS_URL, {
+      method: "POST",
+      contentType: "application/json",
+      body: JSON.stringify({
+        event: eventName,
+        device: /iPhone|iPad|iPod/.test(navigator.userAgent) ? "iOS" :
+                /Android/.test(navigator.userAgent) ? "Android" : "Other",
+        userAgent: navigator.userAgent
+      })
+    });
+  }
+
+  // Registre quan s'obre l'app
+  track("app_open");
+
+  // Registre quan es prem ENTRAR
+  function entrar() {
+    track("entrar_click");
+
+    document.getElementById("loader").style.display = "block";
+
+    setTimeout(function() {
+      window.open(
+        "https://sites.google.com/view/cealtafullaentradaprincipal/p%C3%A0gina-principal",
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }, 600);
+  }
+</script>
+
+  
 </body>
 </html>
